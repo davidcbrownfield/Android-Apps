@@ -86,7 +86,9 @@ See also parametric polymorphism and overloading.
 Parametric polymorphism (also known as generics) is more of a functional-programming concept that an object-oriented concept, but it does appear in many OO languages, including Scala. The key feature of parametric polymorphism is type parameters. For example, in Scala, we don't just have the type List, but rather the type List[A], where A is a type parameter. Similarly, many functions/methods take type parameters.
 Because of these parameters, we can write functions/methods that operate on all kinds of lists. For example, the reverse method works on all kinds of lists, rather than needing to write a different function/method for each type of list.
 What really distinguishes parametric polymorphism from dynamic polymorphism that the point of parametric polymorphism is to be able to do essentially the same thing regardless of type, whereas the point of dynamic polymorphism is to be able to do different things for different types.
+
 For example, List(1,2,3).reverse and List("a","b","c").reverse do essentially the same thing, even though one works on a list of integers and the other works on a list of strings.
+
 ----
 ## <a name="overloading"></a>Overloading  
 

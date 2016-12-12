@@ -6,12 +6,12 @@
 
 [Covariance](#covariance)  
 [Contravariance](#contravariance)  
-[foldRight](#foldRight)
-[Subtype](#subtype)
+[foldRight](#foldRight)  
+[Subtype](#subtype)  
 [Type](#type)
-[Inheritance](#inheritance)
-[Object](#object)
-[Dynamic Polymorphism](#dynamicpolymorphism)
+[Inheritance](#inheritance)  
+[Object](#object)  
+[Dynamic Polymorphism](#dynamicpolymorphism)  
 
 ---
 ## <a name="covariance"></a>Covariance

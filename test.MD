@@ -4,8 +4,8 @@
 ### Topics
 
 
-[Covariance](#covariance)
-[Contravariance](#contravariance)
+[Covariance](#covariance)  
+[Contravariance](#contravariance)  
 [foldRight](#foldRight)
 
 ---

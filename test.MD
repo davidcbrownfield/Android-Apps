@@ -40,7 +40,7 @@ class Two extends class One {
 - Class Two is child class of Class One
 - Same public methods and fields
 
-<a name="top"></a>^ Top of Page
+[^Return to index](#top)  
 ----
 ## <a name="contravariance"></a>Contravariance
 Parameter and output variance

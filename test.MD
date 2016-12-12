@@ -82,12 +82,14 @@ Then the call animal.makeNoise might say “woof” or “meow” or “glub”,
 See also parametric polymorphism and overloading.
 ----
 ## <a name="generics"></a>Parametric Polymorphism / Generics  
+
 Parametric polymorphism (also known as generics) is more of a functional-programming concept that an object-oriented concept, but it does appear in many OO languages, including Scala. The key feature of parametric polymorphism is type parameters. For example, in Scala, we don't just have the type List, but rather the type List[A], where A is a type parameter. Similarly, many functions/methods take type parameters.
 Because of these parameters, we can write functions/methods that operate on all kinds of lists. For example, the reverse method works on all kinds of lists, rather than needing to write a different function/method for each type of list.
 What really distinguishes parametric polymorphism from dynamic polymorphism that the point of parametric polymorphism is to be able to do essentially the same thing regardless of type, whereas the point of dynamic polymorphism is to be able to do different things for different types.
 For example, List(1,2,3).reverse and List("a","b","c").reverse do essentially the same thing, even though one works on a list of integers and the other works on a list of strings.
 ----
 ## <a name="overloading"></a>Overloading  
+
 Overloading is when a single class has multiple methods with the same name. When looking at a particular method call, the intended version of the method is determined by comparing the number and types of arguments in the method call to the number and types of arguments in the various method definitions to see which one matches. For example, this class has three methods with the same name:
  ```scala
  class Foo {

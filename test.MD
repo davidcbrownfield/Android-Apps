@@ -6,14 +6,22 @@
 
 [Covariance](#covariance)  
 [Contravariance](#contravariance)  
-[foldRight](#foldRight)  
-[Subtype](#subtype)  
 [Class](#class)  
+[Subclass](#subclass)  
+[Subtype](#subtype)  
 [Inheritance](#inheritance)  
 [Object](#object)  
 [Dynamic Polymorphism](#dynamicpolymorphism)  
+[Parametric Polymorphism / Generics](#generics) 
+[Overloading](#overloading)  
+[Stub / Abstract Method](#stub)  
+[Abstract Class](#abstractclass)  
+[Trait](#trait)  
+[Object Identity](#objectidentity)
 
----
+[foldRight](#foldRight)  
+
+----
 ## <a name="covariance"></a>Covariance
 ```scala
 class One {
@@ -114,3 +122,48 @@ Overloading is when a single class has multiple methods with the same name. When
 If we call someFoo.bar(3), the first version is run; if we call someFoo.bar("hello"), the second version is run; and if we call someFoo.bar(4,"a"), the third version is run. (If the number and types of arguments do not match any versions, or if they match more than one version, it is a compile-time error.)
 The determination of which version to run is made at compile-time rather than run-time, so overloading is sometimes called static polymorphism. (Note that, in programming languages, the term static refers to compile-time and the term dynamic refers to run-time.)
 Contrast this with dynamic polymorphism.
+
+## <a name="stub"></a>Stub / Abstract Method
+
+A stub (also known as an abstract method) is method signature (name, parameters, and return type) without an implementation/body. (In contrast, a concrete methodincludes an implementation/body.)
+In Scala, a class cannot have any abstract methods; a class with one or more abstract methods must be declared as an abstract class or trait instead.
+
+----
+## <a name="abstractclass"></a>Abstract Class 
+
+An abstract class is a class that is intended to serve as a base for subclasses but cannot be directly instantiated. For example, Animal might be an abstract class, with subclasses like Dog or Shark or Lobster. In such a scenario, you could instantiate those subclasses, but could never directly instantiate an Animal.
+Importantly, an abstract class can include stubs/abstract methods that are intended to be given implementations in the subclasses.
+Compare to trait.
+
+----
+## <a name="trait"></a>Trait
+
+A trait is a more powerful version of an abstract class. Like an abstract class, a trait cannot be directly instantiated, but can include stubs/abstract methods.
+The biggest different between traits and abstract classes is that traits support multiple inheritance, but abstract classes only support single inheritance. That is, if T1 and T2are traits, and A1 and A2 are abstract classes, then you can define
+```scala
+   class C1 extends A1 with T1
+   class C2 extends A2 with T1 with T2
+   class C3 extends T1 with T2
+   class C4 extends C1 with T2
+```
+but you cannot define
+```scala
+   class C5 extends A1 with A2
+   class C6 extends A1 with A2 with T1
+   class C7 extends C1 with A2
+```
+More specifically, a class or abstract class can inherit from at most one class or abstract class, but can inherit from as many traits as desired.
+
+----
+## <a name="objectidentity"></a>Object Identity
+
+The phrase object identity refers to the idea that every instantiation of a class produces a distinct object. Even if two instances of the same class have all the same values in their fields, they are still distinct objects (ie, have their own identity).
+In Scala, the eq method compares object identity. The equals/== method is looser and may consider distinct objects to be “equal” if they are similar according to some other criteria. For example,
+```scala
+  val list1 = List(1,2,3)
+  val list2 = List(1,2,3)
+  list1 eq list2 // returns false, list1 and list2 are NOT the same object
+  list1 == list2 // returns true, list1 and list2 have the same contents
+  list1 equals list2 // same as ==
+```
+----

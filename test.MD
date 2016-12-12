@@ -1,9 +1,9 @@
 # Program Languages
 
 ----
-### Topics
+### Index
 
-
+#### Terms
 [Covariance](#covariance)  
 [Contravariance](#contravariance)  
 [Class](#class)  
@@ -12,14 +12,16 @@
 [Inheritance](#inheritance)  
 [Object](#object)  
 [Dynamic Polymorphism](#dynamicpolymorphism)  
-[Parametric Polymorphism / Generics](#generics) 
+[Parametric Polymorphism / Generics](#generics)  
 [Overloading](#overloading)  
 [Stub / Abstract Method](#stub)  
 [Abstract Class](#abstractclass)  
 [Trait](#trait)  
 [Object Identity](#objectidentity)
 
+#### Scala
 [foldRight](#foldRight)  
+[Map](#map)  
 
 ----
 ## <a name="covariance"></a>Covariance
@@ -167,3 +169,20 @@ In Scala, the eq method compares object identity. The equals/== method is looser
   list1 equals list2 // same as ==
 ```
 ----
+
+## <a name="foldRight"></a>foldRight
+
+```scala
+list.foldRight(0)(_ + _) // sum all elements
+```
+Folds collapse a collection into one value.  The 0 is the start value.  For the second pair of parentheses, you can also do ((x,y) -> x+y) if it helps you keep track of everything…
+
+----
+
+## <a name="map"></a>Map
+
+```scala
+list.map(_ < x) // turn each element into a bool
+    .map(if (_) 1 else 0) // turn each bool into 1 or 0
+```
+Map applies a function against each element in a collection and returns the resulting new collection.

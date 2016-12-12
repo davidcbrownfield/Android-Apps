@@ -1,7 +1,7 @@
-# <a name="top"></a>Program Languages
+# Program Languages
 
 ----
-### Index
+### <a name="top"></a>Index
 
 #### Terms
 [Covariance](#covariance)  
@@ -57,12 +57,14 @@ class Two extends class One {
 
 Class Two needs to have a higher or equal parameter with an equal or lower result
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="object"></a>Object  
 
 An object is a run-time value, usually an instance of a class. Like other values, such as integers, an object be can stored in variables or data structures (such as arrays). An object can also be passed as an argument to a function, or returned as a result of a function.
 An object can have members, which are typically accessed using dot notation, as in someObject.memberName. The two most common kinds of members are fields (also known as attributes) and methods (sometimes called behaviors). Fields are variables inside the object and are accessed as someObject.fieldName. Methods are functions inside the object and are called as someObject.methodName(args).
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="class"></a>Class  
 
@@ -70,18 +72,21 @@ A class is a type that describes a family of objects that have the same members,
 In most OO languages, (direct) instances of the same class will have the same set of members, with possibly different values in the fields but with exactly the same implementations of the methods.
 See also subclass.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="subclass"></a>Subclass
 A subclass is a class that is defined by extending an existing class (called the parent class or superclass). The subclass automatically inherits all the members of the parent class, but may add more members, and may override some existing members.
 The subclass/superclass relationship is transitive, so if A is a subclass of B, and B is a subclass of C, then A is also a subclass of C.
 See also [subtype](#subtype).
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="inheritance"></a>Inheritance  
 
 Inheritance is code stealing. A subclass inherits (steals the code for) all the members of the parent class, almost as if that code had been cut-and-pasted from the parent class into the subclass. If there are some members of the parent class that the subclass wants to modify, then the subclass can override those particular definitions.
 Many OO languages allow a subclass to inherit from at most one parent class. This is called single inheritance. However, some OO languages allow a subclass to inherit fom more than one parent class. This is called multiple inherintance. Scala supports an unusual form of multiple inheritance, where a subclass can inherit from at most one parentclass, but can inherit from multiple traits.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="Subtype"></a>Subtype  
 
@@ -89,6 +94,7 @@ A type A is a subtype of type B if a value of type A can be used wherever a valu
 We also describe the subtype relationship as an IS-A relationship, as in “A hedgehog is a mammal” or “A shoofly pie is a dessert.”
 In most object-oriented languages (including Scala), a subclass is also a subtype of its superclass. For example, if we have a class Mammal and another class Hedgehog that extends Mammal, than an instance of class Hedgehog can be used where an instance of class Mammal is expected. Put another way, a (direct or indirect) instance of class Hedgehog is also an (indirect) instance of class Mammal.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="dynamicpolymorphism"></a>Dynamic Polymorphism  
 
@@ -101,6 +107,7 @@ def talk(animal: Animal): Unit = animal.makeNoise()
 Then the call animal.makeNoise might say “woof” or “meow” or “glub”, depending on whether animal was a Dog or a Cat or a Goldfish.
 See also parametric polymorphism and overloading.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="generics"></a>Parametric Polymorphism / Generics  
 
@@ -110,6 +117,7 @@ What really distinguishes parametric polymorphism from dynamic polymorphism that
 
 For example, List(1,2,3).reverse and List("a","b","c").reverse do essentially the same thing, even though one works on a list of integers and the other works on a list of strings.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="overloading"></a>Overloading  
 
@@ -125,11 +133,15 @@ If we call someFoo.bar(3), the first version is run; if we call someFoo.bar("hel
 The determination of which version to run is made at compile-time rather than run-time, so overloading is sometimes called static polymorphism. (Note that, in programming languages, the term static refers to compile-time and the term dynamic refers to run-time.)
 Contrast this with dynamic polymorphism.
 
+#### [^Return to Index](#top)  
+----
+
 ## <a name="stub"></a>Stub / Abstract Method
 
 A stub (also known as an abstract method) is method signature (name, parameters, and return type) without an implementation/body. (In contrast, a concrete methodincludes an implementation/body.)
 In Scala, a class cannot have any abstract methods; a class with one or more abstract methods must be declared as an abstract class or trait instead.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="abstractclass"></a>Abstract Class 
 
@@ -137,6 +149,7 @@ An abstract class is a class that is intended to serve as a base for subclasses 
 Importantly, an abstract class can include stubs/abstract methods that are intended to be given implementations in the subclasses.
 Compare to trait.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="trait"></a>Trait
 
@@ -156,6 +169,7 @@ but you cannot define
 ```
 More specifically, a class or abstract class can inherit from at most one class or abstract class, but can inherit from as many traits as desired.
 
+#### [^Return to Index](#top)  
 ----
 ## <a name="objectidentity"></a>Object Identity
 
@@ -168,6 +182,8 @@ In Scala, the eq method compares object identity. The equals/== method is looser
   list1 == list2 // returns true, list1 and list2 have the same contents
   list1 equals list2 // same as ==
 ```
+
+#### [^Return to Index](#top)  
 ----
 
 ## <a name="foldRight"></a>foldRight
@@ -177,6 +193,7 @@ list.foldRight(0)(_ + _) // sum all elements
 ```
 Folds collapse a collection into one value.  The 0 is the start value.  For the second pair of parentheses, you can also do ((x,y) -> x+y) if it helps you keep track of everything…
 
+#### [^Return to Index](#top)  
 ----
 
 ## <a name="map"></a>Map
@@ -186,3 +203,5 @@ list.map(_ < x) // turn each element into a bool
     .map(if (_) 1 else 0) // turn each bool into 1 or 0
 ```
 Map applies a function against each element in a collection and returns the resulting new collection.
+
+#### [^Return to Index](#top)  
